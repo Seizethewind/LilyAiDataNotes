@@ -1,8 +1,8 @@
-LilyAiNotes — Project Instructions
+LilyAiDataNotes — Project Instructions
 
 1. Project Identity
 
-Project Name: LilyAiNotes
+Project Name: LilyAiDataNotes
 
 Project Type: AI-powered Knowledge Management Platform
 
@@ -10,7 +10,7 @@ Primary Goal:
 
 Build a website that serves as a centralized knowledge and data storage system for AI models and agents.
 
-LilyAiNotes provides persistent storage, document management, hybrid memory, and knowledge retrieval. It also includes an AI assistant that lives inside the website and helps users manage, understand, organize, and process stored documents.
+LilyAiDataNotes provides persistent storage, document management, hybrid memory, and knowledge retrieval. It also includes an AI assistant that lives inside the website and helps users manage, understand, organize, and process stored documents.
 
 The platform must allow different AI models and agents to access authorized knowledge through a consistent API without depending on any particular LLM provider.
 
@@ -73,7 +73,7 @@ Use stable, compatible package versions. Verify official documentation before im
 
 3. System Architecture
 
-LilyAiNotes must be separated into independent architectural layers.
+LilyAiDataNotes must be separated into independent architectural layers.
 
 A. Presentation Layer
 
@@ -289,7 +289,7 @@ Database Rules
 
 5. Hybrid Memory Architecture
 
-LilyAiNotes uses hybrid memory.
+LilyAiDataNotes uses hybrid memory.
 
 Implement the following memory scopes:
 
@@ -431,7 +431,7 @@ Processing should support retrying failed jobs without duplicating records.
 
 7. Built-in AI Assistant
 
-LilyAiNotes must have an AI assistant inside the website.
+LilyAiDataNotes must have an AI assistant inside the website.
 
 Its primary purpose is to work with the knowledge database and documents.
 
@@ -623,7 +623,7 @@ The database must remain usable even if all embedding providers are unavailable.
 
 11. Tokenization and Training Data
 
-LilyAiNotes should be capable of preparing knowledge for future model training and fine-tuning workflows.
+LilyAiDataNotes should be capable of preparing knowledge for future model training and fine-tuning workflows.
 
 Requirements
 
@@ -692,7 +692,7 @@ WebContainers Security
 
 Use a modular structure. The following is a proposed starting point, not permission to create unnecessary files.
 
-LilyAiNotes/
+LilyAiDataNotes/
 │
 ├── CLAUDE.md
 ├── README.md
@@ -707,7 +707,7 @@ LilyAiNotes/
 │   ├── migrations/
 │   │
 │   ├── src/
-│   │   └── lilyainotes/
+│   │   └── lilyaidatanotes/
 │   │       ├── main.py
 │   │       ├── config/
 │   │       ├── database/
@@ -855,7 +855,7 @@ Return useful error messages without exposing secrets or internal sensitive info
 
 15. Development Workflow
 
-Claude must follow this workflow when working on LilyAiNotes.
+Claude must follow this workflow when working on LilyAiDataNotes.
 
 Before Implementation
 
@@ -943,7 +943,7 @@ Verify:
 
 17. Development Phases
 
-Implement LilyAiNotes incrementally.
+Implement LilyAiDataNotes incrementally.
 
 Do not attempt to build the entire platform in one uncontrolled operation.
 
@@ -1057,7 +1057,7 @@ Claude must never:
 
 19. Final Project Objective
 
-LilyAiNotes should become an independent knowledge infrastructure for AI models and agents.
+LilyAiDataNotes should become an independent knowledge infrastructure for AI models and agents.
 
 Its purpose is to provide persistent, organized, searchable, and reusable information without forcing AI models to depend on their own internal memory.
 
@@ -1075,4 +1075,4 @@ The AI assistant is the intelligent document and knowledge management interface.
 
 The provider-independent architecture allows different models and agents to use the same knowledge infrastructure.
 
-Build LilyAiNotes as a reusable knowledge platform, not as a chatbot with a database attached.
+Build LilyAiDataNotes as a reusable knowledge platform, not as a chatbot with a database attached.
