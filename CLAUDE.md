@@ -1076,3 +1076,17 @@ The AI assistant is the intelligent document and knowledge management interface.
 The provider-independent architecture allows different models and agents to use the same knowledge infrastructure.
 
 Build LilyAiDataNotes as a reusable knowledge platform, not as a chatbot with a database attached.
+
+Additional Architecture Requirements
+
+- Maintain clear separation between file storage, database storage, document processing, knowledge retrieval, memory, AI providers, and frontend execution.
+- Original uploaded files must be preserved independently from extracted text and generated embeddings.
+- Use background workers for expensive document-processing and indexing operations.
+- WebContainers must remain a core frontend capability and must not be confused with backend execution.
+- Implement a storage abstraction so storage providers can be replaced without changing document business logic.
+- Implement provider adapters so LLM and embedding providers can be replaced independently.
+- All agent access to memory and documents must pass authorization checks.
+- Add structured logging, health checks, database backup procedures, and automated validation.
+- Create directories and files only when needed for a working feature.
+- Do not generate placeholder files simply to match the architecture tree.
+- Preserve the one-function-per-implementation-source-file rule and the 200-line maximum for every non-Markdown file.
