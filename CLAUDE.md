@@ -696,62 +696,278 @@ LilyAiDataNotes/
 │
 ├── CLAUDE.md
 ├── README.md
+├── LICENSE
 ├── .gitignore
+├── .editorconfig
 ├── .env.example
 ├── docker-compose.yml
+├── Makefile
+│
+├── .github/
+│   └── workflows/
+│       ├── backend-tests.yml
+│       ├── frontend-tests.yml
+│       └── code-quality.yml
 │
 ├── backend/
 │   ├── pyproject.toml
 │   ├── alembic.ini
+│   ├── Dockerfile
 │   │
 │   ├── migrations/
+│   │   ├── env.py
+│   │   ├── script.py.mako
+│   │   └── versions/
 │   │
 │   ├── src/
 │   │   └── lilyaidatanotes/
+│   │       ├── __init__.py
 │   │       ├── main.py
+│   │       │
 │   │       ├── config/
+│   │       │   ├── settings.py
+│   │       │   ├── logging.py
+│   │       │   └── constants.py
+│   │       │
 │   │       ├── database/
+│   │       │   ├── session.py
+│   │       │   ├── base.py
+│   │       │   └── health.py
+│   │       │
 │   │       ├── api/
+│   │       │   ├── router.py
+│   │       │   ├── dependencies.py
+│   │       │   ├── exception_handlers.py
+│   │       │   └── v1/
+│   │       │       ├── documents.py
+│   │       │       ├── knowledge.py
+│   │       │       ├── memory.py
+│   │       │       ├── conversations.py
+│   │       │       ├── assistant.py
+│   │       │       ├── providers.py
+│   │       │       ├── workspaces.py
+│   │       │       ├── exports.py
+│   │       │       └── users.py
+│   │       │
 │   │       ├── auth/
+│   │       │   ├── authentication.py
+│   │       │   ├── authorization.py
+│   │       │   ├── password.py
+│   │       │   └── tokens.py
+│   │       │
+│   │       ├── users/
+│   │       │   ├── models/
+│   │       │   ├── schemas/
+│   │       │   └── repositories/
+│   │       │
 │   │       ├── documents/
-│   │       ├── knowledge/
-│   │       ├── memory/
-│   │       ├── conversations/
-│   │       ├── ai/
-│   │       ├── providers/
-│   │       ├── retrieval/
+│   │       │   ├── models/
+│   │       │   ├── schemas/
+│   │       │   ├── repositories/
+│   │       │   ├── services/
+│   │       │   └── versioning/
+│   │       │
+│   │       ├── storage/
+│   │       │   ├── interfaces/
+│   │       │   ├── local/
+│   │       │   ├── object_storage/
+│   │       │   ├── file_validation/
+│   │       │   └── storage_registry.py
+│   │       │
 │   │       ├── processing/
+│   │       │   ├── pipeline/
+│   │       │   ├── extraction/
+│   │       │   │   ├── text/
+│   │       │   │   ├── pdf/
+│   │       │   │   ├── office/
+│   │       │   │   ├── images/
+│   │       │   │   ├── audio/
+│   │       │   │   ├── video/
+│   │       │   │   └── code/
+│   │       │   ├── normalization/
+│   │       │   ├── chunking/
+│   │       │   └── jobs/
+│   │       │
+│   │       ├── knowledge/
+│   │       │   ├── models/
+│   │       │   ├── schemas/
+│   │       │   ├── repositories/
+│   │       │   ├── services/
+│   │       │   ├── indexing/
+│   │       │   └── relationships/
+│   │       │
+│   │       ├── retrieval/
+│   │       │   ├── full_text/
+│   │       │   ├── vector/
+│   │       │   ├── hybrid/
+│   │       │   ├── ranking/
+│   │       │   └── filters/
+│   │       │
+│   │       ├── memory/
+│   │       │   ├── models/
+│   │       │   ├── schemas/
+│   │       │   ├── repositories/
+│   │       │   ├── scopes/
+│   │       │   ├── retrieval/
+│   │       │   ├── consolidation/
+│   │       │   └── policies/
+│   │       │
+│   │       ├── conversations/
+│   │       │   ├── models/
+│   │       │   ├── schemas/
+│   │       │   ├── repositories/
+│   │       │   └── summarization/
+│   │       │
+│   │       ├── ai/
+│   │       │   ├── interfaces/
+│   │       │   ├── adapters/
+│   │       │   ├── orchestration/
+│   │       │   ├── prompts/
+│   │       │   ├── tools/
+│   │       │   ├── streaming/
+│   │       │   └── context_builder/
+│   │       │
+│   │       ├── providers/
+│   │       │   ├── registry.py
+│   │       │   ├── models/
+│   │       │   ├── llm/
+│   │       │   ├── embeddings/
+│   │       │   └── configuration/
+│   │       │
+│   │       ├── datasets/
+│   │       │   ├── models/
+│   │       │   ├── tokenization/
+│   │       │   ├── preparation/
+│   │       │   └── exporters/
+│   │       │
 │   │       ├── workspace/
-│   │       ├── exports/
-│   │       └── security/
+│   │       │   ├── models/
+│   │       │   ├── schemas/
+│   │       │   ├── repositories/
+│   │       │   ├── persistence/
+│   │       │   └── permissions/
+│   │       │
+│   │       ├── jobs/
+│   │       │   ├── queue/
+│   │       │   ├── workers/
+│   │       │   ├── scheduling/
+│   │       │   └── retry/
+│   │       │
+│   │       ├── audit/
+│   │       │   ├── models/
+│   │       │   ├── repositories/
+│   │       │   └── services/
+│   │       │
+│   │       └── common/
+│   │           ├── exceptions/
+│   │           ├── types/
+│   │           ├── utilities/
+│   │           └── validation/
+│   │
+│   ├── worker/
+│   │   └── main.py
 │   │
 │   └── tests/
+│       ├── unit/
+│       ├── integration/
+│       ├── api/
+│       ├── security/
+│       └── fixtures/
 │
 ├── frontend/
 │   ├── package.json
-│   ├── remix.config.js
+│   ├── tsconfig.json
+│   ├── vite.config.ts
+│   ├── Dockerfile
+│   │
+│   ├── public/
+│   │
 │   ├── app/
+│   │   ├── root.tsx
+│   │   ├── entry.client.tsx
+│   │   ├── entry.server.tsx
+│   │   │
 │   │   ├── routes/
+│   │   │   ├── _index.tsx
+│   │   │   ├── dashboard.tsx
+│   │   │   ├── documents.tsx
+│   │   │   ├── knowledge.tsx
+│   │   │   ├── memory.tsx
+│   │   │   ├── conversations.tsx
+│   │   │   ├── assistant.tsx
+│   │   │   ├── workspace.tsx
+│   │   │   ├── settings.tsx
+│   │   │   └── login.tsx
+│   │   │
 │   │   ├── components/
+│   │   │   ├── layout/
+│   │   │   ├── navigation/
+│   │   │   ├── documents/
+│   │   │   ├── knowledge/
+│   │   │   ├── memory/
+│   │   │   ├── assistant/
+│   │   │   └── workspace/
+│   │   │
+│   │   ├── features/
+│   │   │   ├── document-manager/
+│   │   │   ├── knowledge-browser/
+│   │   │   ├── memory-manager/
+│   │   │   ├── ai-assistant/
+│   │   │   └── workspace-manager/
+│   │   │
 │   │   ├── services/
+│   │   │   ├── api/
+│   │   │   ├── authentication/
+│   │   │   └── streaming/
+│   │   │
+│   │   ├── workspace/
+│   │   │   ├── runtime/
+│   │   │   │   ├── boot/
+│   │   │   │   └── lifecycle/
+│   │   │   ├── filesystem/
+│   │   │   ├── terminal/
+│   │   │   ├── editor/
+│   │   │   ├── preview/
+│   │   │   ├── persistence/
+│   │   │   └── permissions/
+│   │   │
 │   │   ├── hooks/
+│   │   ├── context/
 │   │   ├── utils/
-│   │   ├── styles/
-│   │   └── workspace/
-│   │       ├── runtime/
-│   │       ├── terminal/
-│   │       ├── filesystem/
-│   │       └── preview/
+│   │   ├── types/
+│   │   └── styles/
 │   │
 │   └── tests/
+│       ├── components/
+│       ├── routes/
+│       ├── workspace/
+│       └── integration/
 │
-├── docs/
-│   ├── ARCHITECTURE.md
-│   ├── DATABASE.md
-│   ├── API.md
-│   └── DEVELOPMENT.md
+├── infrastructure/
+│   ├── docker/
+│   ├── database/
+│   ├── reverse-proxy/
+│   ├── monitoring/
+│   └── deployment/
 │
-└── scripts/
+├── scripts/
+│   ├── development/
+│   ├── database/
+│   ├── maintenance/
+│   └── validation/
+│
+└── docs/
+    ├── ARCHITECTURE.md
+    ├── DATABASE.md
+    ├── API.md
+    ├── MEMORY.md
+    ├── AI_PROVIDERS.md
+    ├── DOCUMENT_PROCESSING.md
+    ├── WEBCONTAINERS.md
+    ├── SECURITY.md
+    ├── TESTING.md
+    ├── DEPLOYMENT.md
+    └── DEVELOPMENT.md
 
 Create files only when they have a real responsibility.
 
