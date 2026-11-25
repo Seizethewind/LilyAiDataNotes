@@ -47,7 +47,7 @@ Database
 
 Frontend
 
-- Remix
+- Remix (Vite as the build tool)
 - TypeScript
 - React
 - WebContainers API
