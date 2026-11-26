@@ -1,0 +1,67 @@
+/* Design tokens. Values match the approved design preview.
+   Light is the default. The dark block overrides colors only.
+   ThemeScript sets data-theme on <html> before the first paint. */
+:root {
+  color-scheme: light;
+
+  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 14px;
+  --radius-pill: 999px;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+
+  --color-bg: #fafaf9;
+  --color-panel: #ffffff;
+  --color-sunk: #f3f2f0;
+  --color-border: #e5e3e0;
+  --color-text: #1c1917;
+  --color-muted: #66605b;
+  --color-accent: #4f46e5;
+  --color-accent-soft: #eef0ff;
+  --color-accent-text: #4338ca;
+  --color-btn-bg: #4f46e5;
+  --color-btn-text: #ffffff;
+  --color-ok-bg: #dcfce7;
+  --color-ok-text: #166534;
+  --color-draft-bg: #fef3c7;
+  --color-draft-text: #92400e;
+  --color-bad-bg: #fee2e2;
+  --color-bad-text: #991b1b;
+  --color-old-bg: #edebe8;
+  --color-old-text: #57534e;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --color-bg: #0f0f11;
+  --color-panel: #17171a;
+  --color-sunk: #1f1f23;
+  --color-border: #2d2d33;
+  --color-text: #ececef;
+  --color-muted: #a3a3ae;
+  --color-accent: #8b8cf8;
+  --color-accent-soft: #23233d;
+  --color-accent-text: #b9baff;
+  --color-btn-bg: #8b8cf8;
+  --color-btn-text: #0f0f11;
+  --color-ok-bg: #14301f;
+  --color-ok-text: #86efac;
+  --color-draft-bg: #33260a;
+  --color-draft-text: #fcd34d;
+  --color-bad-bg: #3a1616;
+  --color-bad-text: #fca5a5;
+  --color-old-bg: #26262b;
+  --color-old-text: #a8a29e;
+}
