@@ -1,0 +1,28 @@
+.ui-status-chip {
+  display: inline-block;
+  padding: 2px var(--space-3);
+  border-radius: var(--radius-pill);
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.ui-status-chip--verified {
+  background: var(--color-ok-bg);
+  color: var(--color-ok-text);
+}
+
+.ui-status-chip--draft {
+  background: var(--color-draft-bg);
+  color: var(--color-draft-text);
+}
+
+.ui-status-chip--disputed {
+  background: var(--color-bad-bg);
+  color: var(--color-bad-text);
+}
+
+.ui-status-chip--superseded {
+  background: var(--color-old-bg);
+  color: var(--color-old-text);
+}
