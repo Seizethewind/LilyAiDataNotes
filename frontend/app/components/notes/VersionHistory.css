@@ -1,0 +1,22 @@
+.version-history__item {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  padding: var(--space-3) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.version-history__version {
+  font-family: var(--font-mono);
+  font-weight: 600;
+}
+
+.version-history__meta {
+  margin-left: auto;
+  color: var(--color-muted);
+  font-size: 12px;
+}
+
+.version-history__empty {
+  color: var(--color-muted);
+}

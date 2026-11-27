@@ -1,0 +1,23 @@
+.linked-notes {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.linked-notes__link {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3);
+  background: var(--color-panel);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.linked-notes__link:hover {
+  border-color: var(--color-accent);
+}
+
+.linked-notes__empty {
+  color: var(--color-muted);
+}
