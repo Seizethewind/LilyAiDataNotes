@@ -1,0 +1,15 @@
+name: Code quality
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  line-limit:
+    name: 200-line limit
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check no non-Markdown file is over 200 lines
+        run: bash scripts/validation/check-line-limit.sh

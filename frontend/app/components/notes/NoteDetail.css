@@ -1,0 +1,35 @@
+.note-detail {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.note-detail__title-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.note-detail__title {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.note-detail__summary {
+  margin-top: var(--space-2);
+  color: var(--color-muted);
+}
+
+.note-detail__section-title {
+  margin-bottom: var(--space-3);
+}
+
+.note-detail__content {
+  padding: var(--space-4);
+  background: var(--color-panel);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
