@@ -1,0 +1,37 @@
+.mobile-tab-bar {
+  display: none;
+}
+
+@media (max-width: 720px) {
+  .mobile-tab-bar {
+    display: block;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+    padding-bottom: env(safe-area-inset-bottom);
+    background: var(--color-panel);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .mobile-tab-bar ul {
+    display: flex;
+  }
+
+  .mobile-tab-bar li {
+    flex: 1;
+  }
+
+  .mobile-tab-bar .nav-item {
+    flex-direction: column;
+    justify-content: center;
+    min-height: 56px;
+    border-radius: 0;
+    font-size: 12px;
+  }
+
+  .mobile-tab-bar .nav-item__badge {
+    display: none;
+  }
+}
